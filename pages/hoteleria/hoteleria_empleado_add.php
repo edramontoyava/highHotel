@@ -9,7 +9,7 @@ require_once '../../php/validar_rol.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HH</title>
-    <link rel="stylesheet" href="../../css/hoteleria_form_style.css" />
+    <link rel="stylesheet" href="/highHotel/css/hoteleria_form_style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -18,14 +18,14 @@ require_once '../../php/validar_rol.php';
   </head>
   <body>
   <?php
-      include('../includes/menu.html');
+      include('../includes/menu.php');
     ?>
     <?php
-      include('../includes/header.html');
+      include('../includes/header.php');
     ?>
       <div class="board">
         <div class="form">
-          <form action="../../php/agregar_hotel.php" method="post" enctype="multipart/form-data">
+          <form action="/highHotel/php/agregar_hotel.php" method="post" enctype="multipart/form-data">
               <h2>Registro de hoteles</h2>
               <label for="nomrbre">Nombre del hotel</label>
               <input type="text" id="nombre" name="nombre" required>

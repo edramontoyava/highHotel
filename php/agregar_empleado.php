@@ -8,8 +8,12 @@
     $nss=validar($_POST['nss']);
     $antiguedad=validar($_POST['antiguedad']);
     $estatus=validar($_POST['estatus']);
+    $fecha = date('Y-m-d');
     
-    $claveEmpleado = 'CLAVE'.str_replace(' ','',$nombre);
+
+    $user = crearUsuario(5);
+
+    $claveEmpleado = $user.str_replace(' ','',$nombre);
 
     $conexion = conectar();
 
@@ -17,9 +21,9 @@
 
     $foto = subir_imagen($_FILES['foto']);
 
-    $sql = "insert into empleado values ('$claveEmpleado','$claveHotel', '$claveArea', '$nombre','$apellido','$nacimiento','$nss','$antiguedad','$estatus','$foto')";
+    $sql = "insert into empleado values ('$claveEmpleado','$claveHotel', '$claveArea', '$nombre','$apellido','$nacimiento','$nss','$antiguedad','$estatus','$foto','No','$fecha')";
 
-    $sql2 = "insert into usuario values ('$claveEmpleado',NULL,'$claveEmpleado','$password','Empleado')";
+    $sql2 = "insert into usuario values ('$claveEmpleado',NULL,'$claveEmpleado','$password','EMP','0')";
 
     $resultado = mysqli_multi_query($conexion, $sql);
     $resultado = mysqli_multi_query($conexion, $sql2);

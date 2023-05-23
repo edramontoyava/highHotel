@@ -9,7 +9,7 @@ require_once '../../php/validar_rol.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HH</title>
-    <link rel="stylesheet" href="../../css/hoteleria_form_style.css" />
+    <link rel="stylesheet" href="/highHotel/css/hoteleria_form_style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -18,30 +18,19 @@ require_once '../../php/validar_rol.php';
   </head>
   <body>
   <?php
-      include('../includes/menu.html');
+      include('../includes/menu.php');
     ?>
     <?php
-      include('../includes/header.html');
+      include('../includes/header.php');
     ?>
       <div class="board">
         <div class="form">
-          <form action="../../php/agregar_empleado.php" method="post" enctype="multipart/form-data">
-              <h2>Registro de hoteles</h2>
+          <form action="/highHotel/php/agregar_empleado.php" method="post" enctype="multipart/form-data">
+              <h2>Registro de empleados</h2>
 
-              <label for="claveHotel">Hotel</label>
-              <select name="claveHotel" id="claveHotel" required>
-                <?php
-                  $conexion = mysqli_connect('localhost', 'root', '', 'hh');
-                  $sql="SELECT claveHotel,nombreHotel from hoteleria";
-                  $result=mysqli_query($conexion,$sql);
-                ?>
-                <?php 
-                  while ($fila = mysqli_fetch_assoc($result)) { 
-                ?>
-                  <option value="<?php echo $fila['claveHotel']; ?>"><?php echo $fila['nombreHotel']; ?></option>
-                <?php } ?>
-              </select> 
-              
+              <label for="claveHotel">Clave del Hotel</label>
+              <input type="text" id="claveHotel" name="claveHotel" value="<?php echo $_SESSION['claveH'] ?>" readonly >
+
               <label for="claveArea">Area</label>
               <select name="claveArea" id="claveArea" required>
                 <?php

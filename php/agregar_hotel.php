@@ -6,7 +6,11 @@
     $estatus = validar($_POST['estatus']);
     
 
-    $claveHotel = 'CLAVH'.str_replace(' ','',$nombre);
+  
+    $user = crearUsuario(5);
+    
+    $claveHotel = $user.str_replace(' ','',$nombre);
+
     
     $conexion = conectar();
 
@@ -16,7 +20,7 @@
 
     $sql = "insert into hoteleria values ('$claveHotel','$logo', '$nombre', '$propietario','$domicilio','$estatus')";
 
-    $sql2 = "insert into usuario values ('$claveHotel','$claveHotel',NULL,'$password','Administrador')";
+    $sql2 = "insert into usuario values ('$claveHotel','$claveHotel',NULL,'$password','ADM',0)";
 
     $resultado = mysqli_multi_query($conexion, $sql);
     $resultado = mysqli_multi_query($conexion, $sql2);

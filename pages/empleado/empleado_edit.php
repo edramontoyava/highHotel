@@ -9,7 +9,7 @@ require_once '../../php/validar_rol.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HH</title>
-    <link rel="stylesheet" href="../../css/hoteleria_form_style.css" />
+    <link rel="stylesheet" href="/highHotel/css/hoteleria_form_style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -18,10 +18,10 @@ require_once '../../php/validar_rol.php';
   </head>
   <body>
   <?php
-      include('../includes/menu.html');
+      include('../includes/menu.php');
     ?>
     <?php
-      include('../includes/header.html');
+      include('../includes/header.php');
     ?>
       <div class="board">
         <?php
@@ -38,7 +38,7 @@ require_once '../../php/validar_rol.php';
 
           ?>
         <div class="form">
-          <form action="../../php/editar_empleado.php" method="post" enctype="multipart/form-data">
+          <form action="/highHotel/php/editar_empleado.php" method="post" enctype="multipart/form-data">
               <h2>Editar Empleado</h2>
 
               <label for="claveEmpleado">Clave del empleado</label>
@@ -47,13 +47,10 @@ require_once '../../php/validar_rol.php';
               <label for="claveHotel">Clave del hotel</label>
               <input type="text" id="claveHotel" name="claveHotel" value="<?php echo $row['claveHotel'] ?>" readonly >
 
-              <label for="claveArea">Clave del area</label>
-              <input type="text" id="claveArea" name="claveArea" value="<?php echo $row['claveArea'] ?>" readonly >
-
-              <label for="nombre">Nombre del empelado</label>
+              <label for="nombre">Nombre del empleado</label>
               <input type="text" id="nombre" name="nombre" value="<?php echo $row['nombreEmpleado'] ?>" required>
 
-              <label for="apellido">Apellido del empelado</label>
+              <label for="apellido">Apellido del empleado</label>
               <input type="text" id="apellido" name="apellido" value="<?php echo $row['apellidoEmpleado'] ?>" required>
 
               <label for="nacimiento">Fecha de nacimiento</label>
@@ -61,9 +58,6 @@ require_once '../../php/validar_rol.php';
 
               <label for="nss">No. seguro social</label>
               <input type="text" id="nss" name="nss" value="<?php echo $row['NSS'] ?>" required>
-
-              <label for="antiguedad">Antiguedad</label>
-              <input type="text" id="antiguedad" name="antiguedad" value="<?php echo $row['antiguedad'] ?>" required>
 
               <label for="estatus">Estatus del Empleado</label>
               <select name="estatus" id="estatus">
